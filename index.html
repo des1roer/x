@@ -81,12 +81,12 @@
 				lazy: true,
 				zoom: true,
 				on: {
-					slideChange: function () {
+					"slideChange": function () {
 						const currentSlide = this.activeIndex + 1;
 						history.replaceState(null, '', `#slide-${currentSlide}`);
 					},
 				},
-			});
+			})
 		</script>
 	</body>
 </html>
