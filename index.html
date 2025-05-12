@@ -28,16 +28,51 @@
 			}
 		</style>
 
-		<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+		<link rel="stylesheet" href="dist/swiper/swiper-bundle.min.css">
 		<div class="swiper">
 			<div class="swiper-wrapper">
-				<div class="swiper-slide"><img src="data/001.jpg"></div>
-				<div class="swiper-slide"><img src="data/002.jpg"></div>
+			</div>
+		</div>
+		<script src="dist/swiper/swiper-bundle.min.js"></script>
+
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
 			</div>
 		</div>
 
-		<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+		<script src="dist/reveal.js"></script>
 		<script>
+			function addSlides() {
+				// Получаем контейнер для слайдов
+				const slidesContainer = document.querySelector('.swiper-wrapper');
+
+				// Цикл для создания слайдов
+				for (let i = 1; i <= 44; i++) {
+					// Создаем новый элемент <section>
+					const section = document.createElement('div');
+					section.className = 'swiper-slide';
+
+					// Создаем элемент <img>
+					const img = document.createElement('img');
+
+					const formattedNum = String(i).padStart(3, '0');
+					// Устанавливаем атрибут data-src
+					// img.setAttribute('data-src', `data/0${i}.jpg`);
+					img.setAttribute('src', `data/${formattedNum}.jpg`);
+
+					// Добавляем изображение в секцию
+					section.appendChild(img);
+
+					// Добавляем секцию в контейнер слайдов
+					slidesContainer.appendChild(section);
+				}
+			}
+
+			// Вызываем функцию добавления слайдов после инициализации
+			addSlides();
+
 			new Swiper('.swiper', {
 				direction: 'vertical', // Главное - вертикальная прокрутка
 				mousewheel: true,      // Прокрутка колесиком мыши
@@ -52,55 +87,9 @@
 					el: '.swiper-scrollbar',
 					draggable: true,
 				},
+				preloadImages: false,
+				lazy: true,
 			});
-		</script>
-	</head>
-	<body>
-		<div class="reveal">
-			<div class="slides">
-			</div>
-		</div>
-
-		<script src="dist/reveal.js"></script>
-		<script>
-			// Reveal.initialize({
-			// 	controls: false,       // Отключаем кнопки навигации
-			// 	progress: false,       // Отключаем индикатор прогресса
-			// 	center: false,         // Не центрируем слайды
-			// 	transition: 'none',    // Убираем анимацию переходов
-			// 	hash: true,            // Сохраняем позицию в URL
-			// 	slideNumber: false     // Отключаем нумерацию
-			// });
-			//
-			// // Функция для добавления слайдов
-			// function addSlides() {
-			// 	// Получаем контейнер для слайдов
-			// 	const slidesContainer = document.querySelector('.slides');
-			//
-			// 	// Цикл для создания слайдов
-			// 	for (let i = 1; i <= 44; i++) {
-			// 		// Создаем новый элемент <section>
-			// 		const section = document.createElement('section');
-			//
-			// 		// Создаем элемент <img>
-			// 		const img = document.createElement('img');
-			//
-			// 		const formattedNum = String(i).padStart(3, '0');
-			// 		// Устанавливаем атрибут data-src
-			// 		// img.setAttribute('data-src', `data/0${i}.jpg`);
-			// 		img.setAttribute('data-src', `data/${formattedNum}.jpg`);
-			//
-			// 		// Добавляем изображение в секцию
-			// 		section.appendChild(img);
-			//
-			// 		// Добавляем секцию в контейнер слайдов
-			// 		slidesContainer.appendChild(section);
-			// 	}
-			// }
-			//
-			// // Вызываем функцию добавления слайдов после инициализации
-			// addSlides();
-
 		</script>
 	</body>
 </html>
