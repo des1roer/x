@@ -42,7 +42,6 @@
 			</div>
 		</div>
 
-		<script src="dist/reveal.js"></script>
 		<script>
 			function addSlides() {
 				// Получаем контейнер для слайдов
@@ -54,6 +53,9 @@
 					const section = document.createElement('div');
 					section.className = 'swiper-slide';
 
+					const zoomContainer = document.createElement('div');
+					zoomContainer.className = 'swiper-zoom-container';
+
 					// Создаем элемент <img>
 					const img = document.createElement('img');
 
@@ -62,9 +64,8 @@
 					// img.setAttribute('data-src', `data/0${i}.jpg`);
 					img.setAttribute('src', `data/${formattedNum}.jpg`);
 
-					// Добавляем изображение в секцию
-					section.appendChild(img);
-
+					zoomContainer.appendChild(img);
+					section.appendChild(zoomContainer);
 					// Добавляем секцию в контейнер слайдов
 					slidesContainer.appendChild(section);
 				}
