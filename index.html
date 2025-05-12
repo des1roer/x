@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<title>reveal.js</title>
+		<style>
+			html, body {
+				height: 100%;
+				margin: 0;
+				padding: 0;
+			}
+			.swiper {
+				width: 100%;
+				height: 100%;
+			}
+			.swiper-slide {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				overflow: hidden;
+			}
+			.swiper-slide img {
+				width: 100%;
+				height: 100%;
+				object-fit: contain; /* или 'cover' для заполнения */
+			}
+		</style>
+<!--		<link rel="stylesheet" href="dist/reset.css">-->
+<!--		<link rel="stylesheet" href="dist/reveal.css">-->
+<!--		<link rel="stylesheet" href="dist/theme/black.css">-->
+
+		<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+		<div class="swiper">
+			<div class="swiper-wrapper">
+				<div class="swiper-slide"><img src="data/001.jpg"></div>
+				<div class="swiper-slide"><img src="data/002.jpg"></div>
+			</div>
+		</div>
+
+		<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+		<script>
+			new Swiper('.swiper', {
+				direction: 'vertical', // Главное - вертикальная прокрутка
+				mousewheel: true,      // Прокрутка колесиком мыши
+				keyboard: true,        // Управление стрелками
+				slidesPerView: 1,      // Один слайд на экран
+				spaceBetween: 0,       // Без отступов между слайдами
+				pagination: {
+					el: '.swiper-pagination',
+					clickable: true,
+				},
+				scrollbar: {
+					el: '.swiper-scrollbar',
+					draggable: true,
+				},
+			});
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+			</div>
+		</div>
+
+		<script src="dist/reveal.js"></script>
+		<script>
+			// Reveal.initialize({
+			// 	controls: false,       // Отключаем кнопки навигации
+			// 	progress: false,       // Отключаем индикатор прогресса
+			// 	center: false,         // Не центрируем слайды
+			// 	transition: 'none',    // Убираем анимацию переходов
+			// 	hash: true,            // Сохраняем позицию в URL
+			// 	slideNumber: false     // Отключаем нумерацию
+			// });
+			//
+			// // Функция для добавления слайдов
+			// function addSlides() {
+			// 	// Получаем контейнер для слайдов
+			// 	const slidesContainer = document.querySelector('.slides');
+			//
+			// 	// Цикл для создания слайдов
+			// 	for (let i = 1; i <= 44; i++) {
+			// 		// Создаем новый элемент <section>
+			// 		const section = document.createElement('section');
+			//
+			// 		// Создаем элемент <img>
+			// 		const img = document.createElement('img');
+			//
+			// 		const formattedNum = String(i).padStart(3, '0');
+			// 		// Устанавливаем атрибут data-src
+			// 		// img.setAttribute('data-src', `data/0${i}.jpg`);
+			// 		img.setAttribute('data-src', `data/${formattedNum}.jpg`);
+			//
+			// 		// Добавляем изображение в секцию
+			// 		section.appendChild(img);
+			//
+			// 		// Добавляем секцию в контейнер слайдов
+			// 		slidesContainer.appendChild(section);
+			// 	}
+			// }
+			//
+			// // Вызываем функцию добавления слайдов после инициализации
+			// addSlides();
+
+		</script>
+	</body>
+</html>
