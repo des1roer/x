@@ -76,8 +76,12 @@
 					el: '.swiper-scrollbar',
 					draggable: true,
 				},
+				// Disable preloading of all images
 				preloadImages: false,
-				lazy: true,
+				// Enable lazy loading
+				lazy: {
+					loadPrevNext: true,
+				},
 				zoom: true,
 				on: {
 					"slideChange": function () {
